@@ -51,6 +51,8 @@ function orderMelons(evt) {
     $.post(url, formData, function(result) {
     	if (result['code'] === 'ERROR') {
     		$('#order-status').addClass('order-error');
+    	} else {
+    		$('#order-status').removeClass('order-error');
     	}
 
     	$('#order-status').html(result['msg']);
